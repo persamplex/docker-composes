@@ -1,0 +1,15 @@
+services:
+  dhcp-server:
+    image: updated-ubuntu:latest
+    container_name: dhcp-wifi
+    network_mode: host
+    user: root
+    cap_add:
+      - NET_ADMIN
+    restart: always
+    volumes:
+      - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
+      - ./isc-dhcp-server:/etc/default/isc-dhcp-server
+    command: /bin/bash -c "echo 'nameserver 1.1.1.1' > /etc/resolv.conf && export DEBIAN_FRONTEND=noninteractive && apt-get -y -o Dpkg::Options::='--force-confold' install isc-dhcp-server && touch /var/lib/dhcp/dhcpd.leases && dhcpd -f -cf /etc/dhcp/dhcpd.conf"
+
+

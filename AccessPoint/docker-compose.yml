@@ -1,0 +1,10 @@
+version: '3'
+services:
+  hostapd:
+    restart: always
+    image: jsiu/hostapd
+    container_name: hostapd
+    network_mode: host
+    privileged: true
+    volumes:
+      - ./hostapd.conf:/hostapd.conf:ro #Config For Your Hostapd

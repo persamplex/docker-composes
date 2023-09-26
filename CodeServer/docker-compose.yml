@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  code-server:
+    network_mode: host
+    user: root
+    image: my-code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Tehran
+      - SUDO_PASSWORD=SomePassword
+      - DEFAULT_WORKSPACE=/root
+    volumes:
+      - ./config:/config
+      - /root:/root
+    restart: unless-stopped

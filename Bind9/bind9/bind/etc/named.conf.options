@@ -1,0 +1,20 @@
+acl internal {
+	10.10.1.0/24;
+	127.0.0.0/8;
+	10.10.2.0/24;
+	192.168.0.0/24;
+};
+options {
+	directory "/var/cache/bind";
+	forwarders {
+		1.1.1.1;
+		8.8.8.8;
+	};
+	allow-query { internal; };
+};
+
+zone "sam.local" IN {
+	type master;
+	file "/etc/bind/sam-home.zone";
+
+};

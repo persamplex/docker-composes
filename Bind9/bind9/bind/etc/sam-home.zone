@@ -1,0 +1,16 @@
+$TTL 2d
+
+$ORIGIN sam.local.
+
+@               IN      SOA     ns.sam.local. info.sam.local. (
+                                2022;
+                                12h;
+                                15m;
+                                3w;
+                                2h;
+                                )
+
+                IN      NS      ns.sam.local.
+ns              IN      A       10.10.1.1
+test            IN      A       10.10.1.1
+@               IN      A       10.10.1.1
