@@ -7,6 +7,3 @@ RUN echo 'nameserver 1.1.1.1' > /etc/resolv.conf && apt-get update && apt-get up
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-RUN useradd -ms /bin/bash newuser
-USER newuser
-WORKDIR /home/newuser
