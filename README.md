@@ -1,3 +1,3 @@
 # docker-composes
 
-some docker compose for you
+some docker compose files to use
