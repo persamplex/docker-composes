@@ -1,2 +1,2 @@
-func test_url(name):
+def test_url(name):
   print(name)
